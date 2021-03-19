@@ -7,14 +7,12 @@ export default function Home() {
 
   return (
     <>
-      <h3 id="header">JavaScript C&C COUNTER</h3>
-      <h2 id="counter">{counter}</h2>
+      <h3>JavaScript C&C COUNTER</h3>
+      <h2>{counter}</h2>
 
-      <h2 id="counter2">{counterTwo}</h2>
+      <h2>{counterTwo}</h2>
 
       <button
-        className="btn btn-primary"
-        id="increment"
         style={{ marginRight: 20 }}
         onClick={() =>
           currentCounter
@@ -25,8 +23,6 @@ export default function Home() {
         INCREMENT
       </button>
       <button
-        className="btn btn-danger"
-        id="decrement"
         onClick={() =>
           currentCounter
             ? setCounter(counter - 1)
@@ -37,11 +33,7 @@ export default function Home() {
       </button>
       <br />
       <br />
-      <button
-        className="btn btn-info"
-        id="toggle"
-        onClick={() => setCurrentCounter(!currentCounter)}
-      >
+      <button onClick={() => setCurrentCounter(!currentCounter)}>
         {`TOGGLE ${currentCounter ? 1 : 2}`}
       </button>
     </>
