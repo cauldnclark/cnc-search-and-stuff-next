@@ -1,65 +1,49 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React from "react";
 
 export default function Home() {
+  const [counter, setCounter] = React.useState(0);
+  const [counterTwo, setCounterTwo] = React.useState(0);
+  const [currentCounter, setCurrentCounter] = React.useState(true);
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <h3 id="header">JavaScript C&C COUNTER</h3>
+      <h2 id="counter">{counter}</h2>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <h2 id="counter2">{counterTwo}</h2>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+      <button
+        className="btn btn-primary"
+        id="increment"
+        style={{ marginRight: 20 }}
+        onClick={() =>
+          currentCounter
+            ? setCounter(counter + 1)
+            : setCounterTwo(counterTwo + 1)
+        }
+      >
+        INCREMENT
+      </button>
+      <button
+        className="btn btn-danger"
+        id="decrement"
+        onClick={() =>
+          currentCounter
+            ? setCounter(counter - 1)
+            : setCounterTwo(counterTwo - 1)
+        }
+      >
+        DECREMENT
+      </button>
+      <br />
+      <br />
+      <button
+        className="btn btn-info"
+        id="toggle"
+        onClick={() => setCurrentCounter(!currentCounter)}
+      >
+        {`TOGGLE ${currentCounter ? 1 : 2}`}
+      </button>
+    </>
+  );
 }
