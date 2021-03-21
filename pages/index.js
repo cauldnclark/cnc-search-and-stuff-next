@@ -1,12 +1,17 @@
 import React from "react";
+import HomePage from "./HomePage";
 
 export default function Home() {
-  const [counter, setCounter] = React.useState(0);
-  const [counterTwo, setCounterTwo] = React.useState(0);
-  const [currentCounter, setCurrentCounter] = React.useState(true);
+  // const [counter, setCounter] = React.useState(0);
+  // const [counterTwo, setCounterTwo] = React.useState(0);
+  // const [currentCounter, setCurrentCounter] = React.useState(true);
 
   return (
     <>
+      <HomePage />
+      {/* 
+      /////Question: To be deleted?/////
+
       <h3>JavaScript C&C COUNTER</h3>
       <h2>{counter}</h2>
 
@@ -35,7 +40,7 @@ export default function Home() {
       <br />
       <button onClick={() => setCurrentCounter(!currentCounter)}>
         {`TOGGLE ${currentCounter ? 1 : 2}`}
-      </button>
+      </button> */}
     </>
   );
 }
